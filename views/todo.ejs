@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
-        <title>Todo List APP test</title>
-        <style>
-            a {
-                text-decoration: none;
-                color: black;
+        <title>calculator</title>
+        <script language="javascript">
+            function calculate(form)
+            {
+             form.results.value=eval(form.entry.value);
             }
-
-        </style>
+        </script>
     </head>
-
-    <body>
-        <h1>This is one of the jenkin project</h1>
-        <ul>
-            <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>">✘</a>
-                <a href="/todo/<%= index %>">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
-        </ul>
-
-        <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">What is your next wish?</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
-            </p>
+    <body bg color="teal">
+<h1><b>simple calculator using java script</b></h1>
+        <form>
+        <br><br>
+        Enter a javascript Mathmatical Expression:
+        <input type="text" name="entry" value="">
+        <input type="button" value="calculate"onclick="calculate(this.form);">
+        <br>
+        
+        The result Of this expression is;
+        <input type="text" name="results"onfocus="this.blur();">
+        <br>
         </form>
     </body>
-
 </html>
